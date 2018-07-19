@@ -9,19 +9,23 @@
 body {
   font-family: 'Merriweather Sans', sans-serif;
   background-image: url("abstract-astro-astronomy-956999 copy.jpg");
-  margin: 0
+  margin: 0;
+
+
 }
 
 
 div  {
-width: 60%;
-margin: 0 auto;
-background-color:rgb(230, 235, 237);
-color: rgb(145, 37, 33);
-border: 1px solid black;
-border-radius: 10px;
-margin-top: 15px;
-padding: 10px 20px;
+  width: 60%;
+  margin: 0 auto;
+  background-color:rgb(69, 66, 66);
+  color: rgb(187, 89, 255);
+  border:  ;
+  border-radius: 10px;
+  margin-top: 15px;
+  padding: 10px 20px;
+
+
 
 }
 
@@ -31,42 +35,150 @@ padding: 10px 20px;
   margin-top: 0px;
   text-align: center;
   border-style: hidden;
+  display: flex;
+  justify-content: space-around;
 
 }
+a:hover {
+  color: white
+
+}
+a {
+  color: rgb(193, 158, 224)
+}
+
+#buttons {
+display: flex;
+justify-content: space-between;
+margin-bottom:20px;
+
+}
+
+#buttons a{
+  width: 70%;
+  background-color: rgb(69, 66, 66);
+  color: rgb(187, 89, 255);
+  padding: 10px;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 4px;
+  font-size: 25
+}
+
+#buttons a:active{
+  transform: translateY(2px);
+}
+#buttons a:hover{
+  color: lavender
+}
+.content-box {
+  width: 60%;
+  margin: 0 auto;
+  background-color:rgb(69, 66, 66);
+  color: rgb(187, 89, 255);
+  border-radius: 10px;
+  margin-top: 15px;
+  padding: 10px 20px;
+  visibility:hidden;
+  position: absolute;
+}
+
+.inner {
+  padding: 10px;
+  margin: 0 auto;
+
+}
+
+#Project .inner {
+  background-color: rgb(69, 66, 66);
+  color:rgb(187, 89, 255);
+  width: 60%;
+  margin: 0 auto;
+  background-color:rgb(69, 66, 66);
+  color: rgb(187, 89, 255);
+  border:  ;
+  border-radius: 10px;
+  margin-top: 15px;
+  padding: 10px 20px;
+
+}
+
+#Er .inner {
+  background-color: rgb(69, 66, 66);
+  color: rgb(187, 89, 255);
+}
+
   </style>
 
 
 <body>
+
   <div id="header">
     <h1> Bryan Villafana's Portfolio</h1>
-    <p> High School Student, Winner, Bike Rider</P>
+      <div id="buttons">
+        <a onclick="showProjects()"> Projects </a>
+        <a onclick="showEr()"> Ethical Reflections </a>
+      </div>
   </div>
 
 <div>
+
   <h1 align="center"> Basic Info </h1>
-<p> Hi my name is <a href="https://github.com/BryanVillafana">
+<p> Hi my name is <a link ="red" href="https://github.com/BryanVillafana">
 Bryan Villafana </a> and I'm a broccoli enthusiast.  </p>
 </div>
 <div>
 <h1 align="center"> About Me </h1>
-<p>My name is Bryan Villafana and I’m 15 years old. I’m from Lawrence, Massachusetts and I live with my older sister, mother and father. Both my parents are from the Dominican Republic and came to Lawrence in the late 90s. Some things I do for fun are play basketball, listen to music and clean the America house common room. This website was made to show how much I’ve learned through Dr.z’s computer science class and share my views on current issues relating to computers and computer sciences. </p>
+<p> I’m 15 years old. I’m from Lawrence, Massachusetts and I live with my older sister, mother and father. Both my parents are from the Dominican Republic and came to Lawrence in the late 90s. Some things I do for fun are play basketball, listen to music and clean the America house common room. This website was made to show how much I’ve learned through Dr.z’s computer science class and share my views on current issues relating to computers and computer sciences. </p>
 </div>
-<div>
-<h1 align="center"> Projects </h1>
+
+
+
+
+
+<div class= "content-box" id="Project">
+ <div class="inner">
+   <h1 align="center"> Projects </h1>
 <p> <a href="https://bryanvillafana.github.io/BryBry-s-First-Website/">Project 1: Make your portfolio </a>
-<p> <a> <u>Project 2: write your script</u></a> (<em>Coming soon</em>)</p>
-<p> <a> <u>Project 3: Make an app</u></a> <em>(Coming soon)</em> </p>
-<p> <a> <u>Project 4:Work with a client</u> (<em>Coming soon</em>)</a></p>
-<p> <a><u>Project 5: choose your adventure</u> (<em>Coming soon</em>) </a> </P>
+<p> <u>Project 2: write your script</u></a> (<em>Coming soon</em>)</p>
+<p> <u>Project 3: Make an app</u></a> <em>(Coming soon)</em> </p>
+<p> <u>Project 4:Work with a client</u> (<em>Coming soon</em>)</a></p>
+<p> <u>Project 5: choose your adventure</u> (<em>Coming soon</em>) </a> </P>
+ </div>
 </div>
-<div>
-<h1 align="center"> Ethical Reflections </h1>
+
+<div class= "content-box" id="Er">
+  <div class ="inner">
+    <h1 align="center"> Ethical Reflections </h1>
 <p> <a href="ethical-Reflection-1.html">Er 1</a></p>
 <p> <a href="ethical-reflection-2.html">Er 2 </a>
 <p> <u>Er 3</u> (<em>Coming soon</em>)</p>
 <p> <u>Er 4 </u>(<em>Coming soon</em>)</p>
 <p> <u>Er 5 </u>(<em>Coming soon</em>)</p>
+  </div>
 </div>
 
+
+
+//Java
+<script>
+var Projects = document.getElementById("Project");
+var Er = document.getElementById("Er");
+
+
+function showProjects(){
+  Project.style.visibility = "visible";
+  Er.style.visibility = "hidden";
+
+}
+
+function showEr() {
+  Project.style.visibility = "hidden";
+  Er.style.visibility = "visible";
+
+}
+
+
+</script>
 </body>
 </html>
