@@ -119,6 +119,7 @@ var quotes =[
   "I speak for the trees for they have no tongue ",
   "I don’t like sand",
   "Pucker up butter-cup.",
+  "The next time I have to come in here I'm crackin' skulls.",
   "Luke, you can destroy the Emperor. He has foreseen this. It is your destiny. Join me, and together we can rule the galaxy as father and son",
   "You must unlearn what you have learned.",
 ]
@@ -135,17 +136,20 @@ var answers = [
   "The Notebook",
   "Inglourious Basterds",
   "Airplane!",
+  "The Life Aquatic with Steve Zissou",
   "The Lorax",
   "Attack of the Clones",
   "Ferris Bueller's Day Off",
-  "Breakfast club",
-  "Empire strikes back",
-  "Empire strikes back",
+  "The Breakfast Club",
+  "The Empire Strikes Back",
+  "The Empire Strikes Back",
 ]
 
 function presentQuote () {
   var Quote = document.getElementById("Quote")
   Quote.innerHTML = quotes[currentquote]
+  input.value = document.getElementById("")
+
 }
 
 function submitAnswer(){
@@ -156,7 +160,7 @@ function submitAnswer(){
     var number = score.innerHTML;
     number++;
     score.innerHTML = number
-    currentquote = currentquote + 1
+    currentquote += 1
     presentQuote()
   } else {
     alert("Hey man, it's ok if you don't know")
