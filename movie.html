@@ -1,0 +1,172 @@
+<html>
+<head>
+ <title> Bryan Villafana's app </title>
+ <meta charset="utf-8">
+
+<style>
+@import url('https://fonts.googleapis.com/css?family=Merriweather+Sans');
+body {
+  font-family: 'Merriweather Sans', sans-serif;
+  margin: 0;
+}
+
+#background {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  z-index: -1;
+}
+
+.stretch {
+ width: 100%;
+ height: 100%;
+ position:absolute;
+}
+
+#score {
+  float:right;
+  padding: 10px;
+  background-color:rgb(217, 217, 217);
+  color: rgb(175, 24, 24);
+  border-radius:18px;
+  margin: 0 auto;
+  border: solid gold;
+
+
+}
+
+#display {
+  display: flex;
+  justify-content: space-between
+}
+
+#Quote {
+  width: 80%;
+  margin: 0 auto;
+  background-color:rgb(217, 217, 217);
+  color: rgb(175, 24, 24);
+  border:  ;
+  border-radius: 16px;
+  margin-top: 0px;
+  padding: 10px 20px;
+  text-align: center;
+  border-style: hidden;
+}
+
+#input {
+    margin: 0 auto;
+}
+
+.answers{
+  display:flex;
+  justify-content: center;
+  width: 40%;
+  margin: 0 auto;
+  background-color:rgb(217, 217, 217);
+  color: rgb(175, 24, 24);
+  border:  ;
+  border-radius: 10px;
+  margin-top: 15px;
+  padding: 10px 20px;
+}
+
+a:active {
+  transform: translateY(2px);
+}
+
+
+</style>
+
+<body>
+  <div id="background">
+    <img src="movie.jpg" class="stretch" alt="">
+  </div>
+
+<div id="display">
+  <h1 id="Quote"></h1>
+  <h1 id="score">0</h1>
+</div>
+  <div>
+<input id="input" class="answers" type="text">
+<a id="buttons" class="answers" onclick="submitAnswer()"> answer </a>
+  </div>
+
+</body>
+
+
+
+
+
+<script>
+
+var score = 0
+var currentquote = 0
+var quotes =[
+  " You either die a hero or live long enough to see yourself become the villain",
+  "An idea is like a virus. Resilient. Highly contagious. And even the smallest seed of an idea can grow. It can grow to define or destroy you.",
+  "Dreams feel real while we're in them. It's only when we wake up that we realize something was actually strange.",
+  "Aw, man, I shot Marvin in the face.",
+  "I am McLovin.",
+  "Her existence alone was excuse enough to justify the creation of the entire world.",
+  " Bachelorette number two is Snow White. She may live with seven men but she ain't easy.",
+  "I never freeze",
+  "If you're a bird, I'm a bird.",
+  "That’s a bingo!",
+  "Surely you can’t be serious? Yes Im serious, and don’t call me shirley.",
+  " Don't point that gun at him, he's an unpaid intern.",
+  "I speak for the trees for they have no tongue ",
+  "I don’t like sand",
+  "Pucker up butter-cup.",
+  "Luke, you can destroy the Emperor. He has foreseen this. It is your destiny. Join me, and together we can rule the galaxy as father and son",
+  "You must unlearn what you have learned.",
+]
+
+var answers = [
+  "The Dark Knight",
+  "Inception",
+  "Inception",
+  "Pulp Fiction",
+  "Superbad",
+  "Midnight Sun",
+  "Shrek",
+  "Black Panther",
+  "The Notebook",
+  "Inglourious Basterds",
+  "Airplane!",
+  "The Lorax",
+  "Attack of the Clones",
+  "Ferris Bueller's Day Off",
+  "Breakfast club",
+  "Empire strikes back",
+  "Empire strikes back",
+]
+
+function presentQuote () {
+  var Quote = document.getElementById("Quote")
+  Quote.innerHTML = quotes[currentquote]
+}
+
+function submitAnswer(){
+  var input = document.getElementById("input")
+
+  if(answers[currentquote] == input.value) {
+    var score = document.getElementById("score");
+    var number = score.innerHTML;
+    number++;
+    score.innerHTML = number
+    currentquote = currentquote + 1
+    presentQuote()
+  } else {
+    alert("Hey man, it's ok if you don't know")
+  }
+
+
+}
+
+
+presentQuote()
+
+
+</script>
